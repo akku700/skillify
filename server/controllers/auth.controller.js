@@ -16,6 +16,9 @@ const register = asyncHandler(async (req, res, next) => {
     res.status(201).send("User has been created.");
   } catch (err) {
     // res.status(400).send("Something went wrong",);
+    if (err.code === 11000) {
+      next(new AppError("email is alreaad   errorxifg", 401));
+    }
     next(new AppError(err, 401));
   }
 });
