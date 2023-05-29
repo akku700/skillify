@@ -21,6 +21,7 @@ function Navbar() {
   }, []);
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  // console.log(currentUser,"currentUser")
 
   const navigate = useNavigate();
 
@@ -50,7 +51,7 @@ function Navbar() {
           {!currentUser?.isSeller && <span>Become a Seller</span>}
           {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
-              <img src={currentUser.img || "/img/noavatar.jpg"} alt="" />
+              <img src={currentUser.user.img || "/img/noavatar.jpg"} alt="" />
               <span>{currentUser?.username}</span>
               {open && (
                 <div className="options">
@@ -128,5 +129,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
