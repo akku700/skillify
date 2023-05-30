@@ -13,6 +13,7 @@ const isAuthenticated = asyncHandler(async (req, res, next) => {
   const decodedData = jwt.verify(token, process.env.JWT_SECRET);
   req.userId = await User.findById(decodedData.id);
   req.isSeller = decodedData.isSeller;
+
   next();
 });
 

@@ -95,6 +95,7 @@ function Login() {
             id="password"
             name="password"
             type="password"
+            placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -104,7 +105,7 @@ function Login() {
         {error && <p className="error">{error}</p>}
       </form>
       <p className="signup-link">
-        Don't have an account? <Link to="/signup">Sign up</Link>
+        Don't have an account? <Link to="/register">Sign up</Link>
       </p>
     </div>
   );

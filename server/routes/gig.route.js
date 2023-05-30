@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const validateToken = require("../middleware/jwt_verifyToken");
+const gigController = require("../controllers/gig.controller");
 
-router.get("/t", (req, res) => {
-  res.send("hello server is alive ");
-});
+router.post("/", validateToken, gigController.createGig);
+router.delete("/:id", validateToken, gigController.deleteGig);
+router.get("/single/:id", validateToken, gigController.getGig);
+router.get("/", validateToken, gigController.getGigs);
 
 module.exports = router;

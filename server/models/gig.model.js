@@ -1,9 +1,10 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const GigSchema = new mongoose.Schema(
   {
     userId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     title: {
@@ -72,5 +73,4 @@ const GigSchema = new mongoose.Schema(
   }
 );
 
-
-module.exports =  mongoose.model("Gig", GigSchema);
+module.exports = mongoose.model("Gig", GigSchema);
