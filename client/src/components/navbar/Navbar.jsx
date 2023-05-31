@@ -52,7 +52,7 @@ function Navbar() {
           {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
               <img src={currentUser.user.img || "/img/noavatar.jpg"} alt="" />
-              <span>{currentUser.user?.username}</span>
+              <span>{currentUser?.username}</span>
               {open && (
                 <div className="options">
                   <Link className="link" to="/">

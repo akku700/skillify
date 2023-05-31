@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^2.1.0",
-    "@tanstack/react-query": "^4.29.7",
+    "@tanstack/react-query": "^4.29.12",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "infinite-react-carousel": "^1.2.11",
@@ -19,6 +19,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^6.11.2",
+    "react-toastify": "^9.1.3",
     "sass": "^1.62.1"
   },
   "devDependencies": {

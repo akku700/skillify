@@ -69,7 +69,8 @@ function Login() {
       localStorage.setItem("currentUser", JSON.stringify(res.data));
       navigate("/");
     } catch (err) {
-      setError(err.response.data);
+      console.log(err.response.data, "hjkdfhkjhfg");
+      setError(err.response.data.message);
     }
   };
 
@@ -110,5 +111,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;
