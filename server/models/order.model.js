@@ -1,9 +1,10 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose")
 
 const OrderSchema = new mongoose.Schema(
   {
     gigId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Gig",
       required: true,
     },
     img: {
@@ -19,11 +20,13 @@ const OrderSchema = new mongoose.Schema(
       required: true,
     },
     sellerId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     buyerId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     isCompleted: {
@@ -40,5 +43,4 @@ const OrderSchema = new mongoose.Schema(
   }
 );
 
-
-module.exports =  mongoose.model("Order", OrderSchema);
+module.exports = mongoose.model("Order", OrderSchema);

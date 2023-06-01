@@ -5,7 +5,7 @@ const gigController = require("../controllers/gig.controller");
 
 router.post("/", validateToken, gigController.createGig);
 router.delete("/:id", validateToken, gigController.deleteGig);
-router.get("/single/:id", validateToken, gigController.getGig);
-router.get("/", validateToken, gigController.getGigs);
+router.get("/single/:id", gigController.getGig);
+router.get("/", gigController.getGigs);
 
 module.exports = router;

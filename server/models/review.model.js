@@ -1,13 +1,15 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const ReviewSchema = new mongoose.Schema(
   {
     gigId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Gig",
       required: true,
     },
     userId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     star: {
@@ -25,5 +27,4 @@ const ReviewSchema = new mongoose.Schema(
   }
 );
 
-
-module.exports =  mongoose.model("Review", ReviewSchema);
+module.exports = mongoose.model("Review", ReviewSchema);

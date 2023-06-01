@@ -8,7 +8,7 @@ import Reviews from "../../components/reviews/Reviews";
 
 function Gig() {
   const { id } = useParams();
-
+  // console.log(id);
   const { isLoading, error, data } = useQuery({
     queryKey: ["gig"],
     queryFn: () =>
@@ -58,7 +58,8 @@ function Gig() {
                 />
                 <span>{dataUser.username}</span>
                 {!isNaN(data.totalStars / data.starNumber) && (
-                  <div className="stars">
+                          <div className="stars">
+                           {/* { console.log(Math.round(data.totalStars / data.starNumber),"gjkd")} */}
                     {Array(Math.round(data.totalStars / data.starNumber))
                       .fill()
                       .map((item, i) => (
@@ -69,7 +70,8 @@ function Gig() {
                 )}
               </div>
             )}
-            <Slider slidesToShow={1} arrowsScroll={1} className="slider">
+                <Slider slidesToShow={1} arrowsScroll={1} className="slider">
+                  {/* {console.log(data,"data from somthih")} */}
               {data.images.map((img) => (
                 <img key={img} src={img} alt="" />
               ))}
@@ -167,3 +169,5 @@ function Gig() {
 }
 
 export default Gig;
+
+

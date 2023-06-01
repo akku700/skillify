@@ -16,13 +16,16 @@ const createGig = asyncHandler(async (req, res, next) => {
     const savedGig = await newGig.save();
     res.status(200).json(savedGig);
   } catch (error) {
-    next(err);
+    next(error);
   }
 });
 
 const deleteGig = asyncHandler(async (req, res, next) => {
   try {
     const gig = await Gig.findById(req.params.id);
+    if (!gig) {
+      return next(new AppError("Gig not found", 404));
+    }
 
     // console.log("gidId: " + gig.userId);
     // console.log("reqID: " + req.userId._id);
@@ -69,5 +72,4 @@ const getGigs = asyncHandler(async (req, res, next) => {
 });
 
 module.exports = { createGig, deleteGig, getGig, getGigs };
-
 

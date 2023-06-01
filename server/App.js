@@ -34,13 +34,13 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use("/api/user", userRoute);
+app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
-app.use("/api/gig", gigRoute);
-app.use("/api/order", orderRoute);
+app.use("/api/gigs", gigRoute);
+app.use("/api/orders", orderRoute);
 app.use("/api/conversation", conversationRoute);
 app.use("/api/message", messageRoute);
-app.use("/api/review", reviewRoute);
+app.use("/api/reviews", reviewRoute);
 
 app.use(globalErrorHandler);
 
